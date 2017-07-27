@@ -9,7 +9,7 @@ int main()
     char decalage('-');
     string key("cryptographie");
 
-    cout << "Write the message to encrypt : ";
+    cout << "Write the message to encrypt it: ";
     cin >> message;
 
     //encrypt the message
