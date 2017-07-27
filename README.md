@@ -1,3 +1,3 @@
 # Crypto_basic
-Soft for crypt and decrypt basics messages
+Soft for encrypt and decrypt basics messages
 Enjoy !
