@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string message(""), sousChaineF(""), messageCrypt("");
+    char decalage('-');
+    string key("cryptographie");
+
+    cout << "Write the message to encrypt : ";
+    cin >> message;
+
+    //encrypt the message
+
+    sousChaineF = message.substr(message.size()/2);
+    message = sousChaineF + message.substr(0,message.size()/2);
+
+    for (int i(0) ; i < message.size() ; i++)
+    {
+        messageCrypt += (message[i]^key[i%key.size()]) +decalage;
+    }
+
+    cout << messageCrypt << endl;
+
+    //Decrypt the message
+
+    message = "";
+
+    for (int i(0) ; i < messageCrypt.size() ; i++)
+    {
+        message += ((messageCrypt[i] - decalage)^key[i%key.size()]);
+    }
+
+    if (message.size()%2 != 0)
+    {
+        sousChaineF += +1 ;
+    }
+
+    sousChaineF = message.substr(message.size()/2);
+    message = sousChaineF + message.substr(0,message.size()/2);
+
+    cout << message;
+
+    return 0;
+}
